@@ -1,7 +1,8 @@
 const {isEmail} = require('validator');
+const api = require('../api');
 
 module.exports = {
-	login: (req, res) => {
+	async login(req, res) {
 		if (!req.body || !req.body.email || !req.body.password) {
 			res.status(400).end('Provide email and password');
 		}
@@ -13,5 +14,33 @@ module.exports = {
 		if (!isEmail(email)) {
 			res.status(400).end('Provide valid email');
 		}
+
+		const user = await api.user.login(email, password);
+
+		if (user.errors) {
+			res.json(user);
+		}
+
+		res.end('logged in successfully');
+	},
+
+	async create(req, res) {
+		if (!req.body) {
+			return res.status(400).end('gimme d ata');
+		}
+
+		const {email, password, name, zip, phone} = req.body;
+
+		if (!email || !password || !name || !zip || !phone) {
+			return res.status(400).json({errors: ['Email, password, name, zip and phone must be valid']});
+		}
+
+		const user = await api.user.create({email, ptPassword: password, name, zip, phone});
+
+		if (user.errors) {
+			res.status(400).json({errors: user.errors});
+		}
+
+		res.status(201).json({user});
 	}
 }

@@ -7,11 +7,17 @@ module.exports = function addRoutes(instance) {
 		res.send('home page!');
 	});
 
+	instance.get('/signup', (req, res) => {
+		res.send('signup');
+	});
+
+	instance.put('/signup', user.create);
+
 	instance.get('/login', (req, res) => {
 		res.send('login');
 	});
 
-	instance.post('/login', user.login, (req, res) => {
+	instance.put('/login', user.login, (req, res) => {
 		res.send('are you allowed');
 	});
 
