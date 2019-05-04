@@ -1,38 +1,39 @@
 {{!< default}}
 {{!-- <link rel="stylesheet" href="./rocket.css"> --}}
-<div class="row container">
+<form id="sign-up" class="card center" style="padding: 2rem" method="POST" action="/signup">
 	<h2 class="center">Sign Up</h2>
-	<form id="sign-up" class="card center" style="padding: 2rem" method="POST" action="/signup">
-		<div class="row">
-			<div class="input-field">
-				<label for="name">Full Name</label>
-				<input id="name" name="name" type="text" class="validate">
-			</div>
+	<div class="row">
+		<div class="input-field">
+			<label for="name">Full Name</label>
+			<input id="name" name="name" type="text" class="validate">
 		</div>
-		<div class="row">
-			<div class="input-field">
-				<label for="password">Password</label>
-				<input placeholder="Password" id="password" name="password" type="password" class="validate">
-			</div>
+	</div>
+	<div class="row">
+		<div class="input-field">
+			<label for="password">Password</label>
+			<input placeholder="Password" id="password" name="password" type="password" class="validate">
 		</div>
-		<div class="row">
-			<div class="input-field">
-				<label for="phone">Phone</label>
-				<input placeholder="Phone Number" id="phone" name="phone" type="text" class="validate">
-			</div>
+	</div>
+	<div class="row">
+		<div class="input-field">
+			<label for="phone">Phone</label>
+			<input placeholder="Phone Number" id="phone" name="phone" type="text" class="validate">
 		</div>
-		<div class="row">
-			<div class="input-field">
-				<label for="zip">Zip Code</label>
-				<input placeholder="Zip Code" id="zip" name="zip" type="text" class="validate">
-			</div>
+	</div>
+	<div class="row">
+		<div class="input-field">
+			<label for="zip">Zip Code</label>
+			<input placeholder="Zip Code" id="zip" name="zip" type="text" class="validate">
 		</div>
-		<div class="row">
-			<div class="input-field">
-				<label for="email">Email</label>
-				<input placeholder="Email" id="email" name="email" type="email" class="validate">
-			</div>
+	</div>
+	<div class="row">
+		<div class="input-field">
+			<label for="email">Email</label>
+			<input placeholder="Email" id="email" name="email" type="email" class="validate">
 		</div>
-		<button class="btn waves-effect waves-light"wav name-light" type="submit" name="action">Submit Form</button>
-	</form>
-</div>
+	</div>
+	<button class="btn waves-effect waves-light" type="submit">Sign Up!</button>
+</form>
+<a class="waves-effect waves-light btn-large" href="/">
+	Sign In
+</a>

@@ -8,15 +8,15 @@ module.exports = function addRoutes(instance) {
 			console.log(req.user);
 			res.render('dashboard');
 		} else {
-			res.render('signup');
+			res.render('signin');
 		}
 	});
 
-	instance.post('/signup', user.create);
-
-	instance.get('/login', (req, res) => {
-		res.send('login');
+	instance.get('/signup', (req, res) => {
+		res.render('signup');
 	});
+
+	instance.post('/signup', user.create);
 
 	instance.put('/login', user.login, (req, res) => {
 		res.send('are you allowed');
