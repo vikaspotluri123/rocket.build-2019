@@ -54,12 +54,12 @@ module.exports = function addRoutes(instance) {
 	});
 
 	instance.get('/services/new', (req, res) => {
-		res.send('want to create a service?');
+		res.render('new-service');
 	});
 
-	instance.put('/services/new', service.create);
+	instance.post('/services/new', service.create);
 
-	instance.post('/services/:id', (req, res) => {
+	instance.put('/services/:id', (req, res) => {
 		res.send('edit a service');
 	});
 

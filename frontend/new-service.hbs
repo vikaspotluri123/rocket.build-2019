@@ -1,0 +1,23 @@
+{{!< default}}
+<h1 class="create">Submit a Service</h1>
+<form class="col s12" action="/services/new" method="POST">
+	<div class="row">
+		<label class="flow-text black-text" for="availability">Availability</label>
+		<div class="input-field">
+			<input placeholder="Days / times you're available" id="availability" name="availability" type="text" class="validate">
+		</div>
+	</div>
+	<div class="row">
+		<label for="name" class="flow-text black-text">Utility/Services</label>
+		<div class="input-field">
+			<input placeholder="e.g. Electrician, Driver" type="text" name="name" id="name"></input>
+		</div>
+	</div>
+	<div class="row">
+		<label for="description" class="flow-text black-text">Description</label>
+		<div class="input-field">
+			<input placeholder="Things you can assist us with" type="text" name="description" id="description"></input>
+		</div>
+	</div>
+	<button class="btn waves-effect waves-light" type="submit">Add Service!</button>
+</form>
