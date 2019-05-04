@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<title>Dashboard</title>
+		<style>
+			.collection .collection-item {
+				grid-template-columns: 1fr 1fr 1fr;
+				display: grid;
+				text-align: center;
+			}
+			.thead {
+				grid-template-columns: 1fr 1fr 1fr;
+				display: grid;
+				color: #239788;
+				padding: 10px 20px;
+				text-align: center;
+			}
+			.row.buttons {
+    			text-align: center;
+			}
+		</style>
+	</head>
+<body>
+	<header></header>
+	<main>
+		<div class="row" style="text-align:center;">
+			<div class="col s6">
+				<p>Items Available</p>
+				<div class="item available" style="font-size: 6em;">4</div>
+			</div>
+			<div class="col s6">
+				<p>Items Completed</p>
+				<div class="item completed" style="font-size: 6em;">2</div>
+			</div>
+		</div>
+		<div class="row z-depth-2 orange" style="color:white;">
+			<p style="text-align:center;">Availability Listed</p>
+				<div class="collection-item thead orange" style="padding:10px 20px;">
+					<div class="utility">
+						<div>Utility</div>
+					</div>
+					<div class="day">
+						<div>Day(s)</div>
+					</div>
+					<div class="time">
+						<div>Time</div>
+					</div>
+				</div>
+			<ul class="collection">
+				<li class="collection-item orange">
+					<div class="utility">
+						<div>Truck</div>
+					</div>
+					<div class="day">
+						<div>Thursdays</div>
+					</div>
+					<div class="time">
+						<div>Evening</div>
+					</div>
+				</li>
+				<li class="collection-item orange">
+					<div class="utility">
+						<div>Electrician</div>
+					</div>
+					<div class="day">
+						<div>Weekends</div>
+					</div>
+					<div class="time">
+						<div>All Day</div>
+					</div>
+				</li>
+				<li class="collection-item orange">
+					<div class="utility">
+						<div>Babysitting</div>
+					</div>
+					<div class="day">
+						<div>Weekday</div>
+					</div>
+					<div class="time">
+						<div>Mornings</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="row buttons">
+			<p>
+				<a class="waves-effect waves-light btn-large" href="item.html"><i class="material-icons right">add</i>Create an Item</a>
+			</p>
+			<p>
+				<a class="waves-effect waves-light btn-large" href="service.html"><i class="material-icons right">build</i>Create a Service</a>
+			</p>
+			<p>
+				<a class="waves-effect orange btn-large" href=""><i class="material-icons right">format_list_numbered</i>Review Submissions</a>
+			</p>
+		</div>
+	</main>
+	<footer></footer>
+</body>
+</html>
