@@ -33,3 +33,4 @@ bookshelf-test.js
 config.js
 
 backend/db.db
+sessions
