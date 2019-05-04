@@ -42,9 +42,10 @@ module.exports = {
 		const user = await api.user.create({email, ptPassword: password, name, zip, phone});
 
 		if (user.errors) {
-			res.status(400).json({errors: user.errors});
+			return res.status(400).json({errors: user.errors});
 		}
 
-		res.status(201).json({user});
+		req.session.user = user.id;
+		res.redirect('/');
 	}
 }

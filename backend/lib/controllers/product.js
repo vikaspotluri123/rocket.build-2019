@@ -1,3 +1,5 @@
+const api = require('../api');
+
 async function deleteAProduct(productID, userID) {
 	const product = await getProduct(productId);
 	if (!product) {
@@ -20,5 +22,32 @@ async function deleteAProduct(productID, userID) {
 		res.status(204).end();
 	} else {
 		res.status(500).end();
+	}
+}
+
+module.exports = {
+	async create(req, res) {
+		if (!req.body) {
+			res.end('you must send some data');
+		}
+
+		const {name, description, condition} = req.body;
+		if (!name || !description || !condition) {
+			return res.json({errors: ['name, description and condition must be provided']});
+		}
+
+		let photo = 'https://picsum.photos/id/524/200/200';
+		const {file} = req;
+		if (file) {
+			photo = file.destination;
+		}
+
+		const product = await api.product.create(name, photo, description, condition, req.user.id);
+
+		if (product.errors) {
+			return res.json({errors: product.errors});
+		}
+
+		res.redirect(`/products/${product.id}`)
 	}
 }

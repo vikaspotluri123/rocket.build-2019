@@ -1,6 +1,8 @@
+const _multer = require('multer');
 const {requireLogin} = require('./middleware');
 const {product, service, user} = require('./controllers');
 
+const multer = _multer({dest: './user-data'});
 
 module.exports = function addRoutes(instance) {
 	instance.get('/', (req, res) => {
@@ -37,9 +39,7 @@ module.exports = function addRoutes(instance) {
 		res.send('want to create a service?');
 	});
 
-	instance.put('/services/new', (req, res) => {
-		res.send('you do want to create a service')
-	});
+	instance.put('/services/new', service.create);
 
 	instance.post('/services/:id', (req, res) => {
 		res.send('edit a service');
@@ -53,9 +53,7 @@ module.exports = function addRoutes(instance) {
 		res.send('want to create a product?');
 	});
 
-	instance.put('/products/new', (req, res) => {
-		res.send('you do want to create a product')
-	});
+	instance.put('/products/new', multer.single('photo'),product.create);
 
 	instance.post('/products/:id', (req, res) => {
 		res.send('edit a products');

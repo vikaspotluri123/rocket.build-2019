@@ -9,6 +9,8 @@ module.exports = {
 	},
 	products: {
 		id: {type: 'string', maxLength: 24, primary: true, nullable: false},
+		name: {type: 'string', maxLength: 100, nullable: false},
+		user_id: {type: 'string', maxLength: 24, references: 'users'},
 		created_at: {type: 'dateTime', nullable: false},
 		picture: {type: 'string', maxLength: 100, nullable: true},
 		description: {type: 'text', maxLength: 1000, nullable: false},
@@ -16,6 +18,7 @@ module.exports = {
 	},
 	services: {
 		id: {type: 'string', maxLength: 24, primary: true, nullable: false},
+		user_id: {type: 'string', maxLength: 24, references: 'users'},
 		created_at: {type: 'dateTime', nullable: false},
 		availability: {type: 'string', maxLength: 100, nullable: false},
 		name: {type: 'string', maxLength: 100, nullable: false},

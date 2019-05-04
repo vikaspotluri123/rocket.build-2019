@@ -10,7 +10,6 @@ module.exports = {
 		const user = (await knex.select('*').from('users').where('id', id))[0];
 		if (user) {
 			delete user.password;
-			delete user.id;
 		}
 
 		return user;
