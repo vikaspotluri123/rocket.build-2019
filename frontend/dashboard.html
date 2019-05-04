@@ -12,6 +12,12 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<title>Dashboard</title>
 		<style>
+			th {
+   				 text-align: center;
+			}
+			td {
+				text-align: center;
+			}
 			.collection .collection-item {
 				grid-template-columns: 1fr 1fr 1fr;
 				display: grid;
@@ -27,6 +33,7 @@
 			.row.buttons {
     			text-align: center;
 			}
+
 		</style>
 	</head>
 <body>
@@ -43,53 +50,33 @@
 			</div>
 		</div>
 		<div class="row z-depth-2 orange" style="color:white;">
-			<p style="text-align:center;">Availability Listed</p>
-				<div class="collection-item thead orange" style="padding:10px 20px;">
-					<div class="utility">
-						<div>Utility</div>
-					</div>
-					<div class="day">
-						<div>Day(s)</div>
-					</div>
-					<div class="time">
-						<div>Time</div>
-					</div>
-				</div>
-			<ul class="collection">
-				<li class="collection-item orange">
-					<div class="utility">
-						<div>Truck</div>
-					</div>
-					<div class="day">
-						<div>Thursdays</div>
-					</div>
-					<div class="time">
-						<div>Evening</div>
-					</div>
-				</li>
-				<li class="collection-item orange">
-					<div class="utility">
-						<div>Electrician</div>
-					</div>
-					<div class="day">
-						<div>Weekends</div>
-					</div>
-					<div class="time">
-						<div>All Day</div>
-					</div>
-				</li>
-				<li class="collection-item orange">
-					<div class="utility">
-						<div>Babysitting</div>
-					</div>
-					<div class="day">
-						<div>Weekday</div>
-					</div>
-					<div class="time">
-						<div>Mornings</div>
-					</div>
-				</li>
-			</ul>
+			<p style="text-align:center;padding-top: 10px;font-size: 17px;">Availability Listed</p>
+			<table class="striped centered">
+				<thead>
+					<tr>
+						<th>Utility</th>
+						<th>Day</th>
+						<th>Tab</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Truck</td>
+						<td>Thursdays</td>
+						<td>Evening</td>
+					</tr>
+					<tr>
+						<td>Electrician</td>
+						<td>Weekends</td>
+						<td>All Day</td>
+					</tr>
+					<tr>
+						<td>Babysitting</td>
+						<td>Weekday</td>
+						<td>Mornings</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<div class="row buttons">
 			<p>
