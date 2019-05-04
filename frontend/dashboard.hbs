@@ -1,0 +1,74 @@
+{{!< default}}
+<style>
+	th {
+			text-align: center;
+	}
+	td {
+		text-align: center;
+	}
+	.collection .collection-item {
+		grid-template-columns: 1fr 1fr 1fr;
+		display: grid;
+		text-align: center;
+	}
+	.thead {
+		grid-template-columns: 1fr 1fr 1fr;
+		display: grid;
+		color: #239788;
+		padding: 10px 20px;
+		text-align: center;
+	}
+	.row.buttons {
+		text-align: center;
+	}
+</style>
+<div class="row" style="text-align:center;">
+	<div class="col s6">
+		<p>Items Available</p>
+		<div class="item available" style="font-size: 6em;">4</div>
+	</div>
+	<div class="col s6">
+		<p>Items Completed</p>
+		<div class="item completed" style="font-size: 6em;">2</div>
+	</div>
+</div>
+<div class="row z-depth-2 orange" style="color:white;">
+	<p style="text-align:center;padding-top: 10px;font-size: 17px;">Availability Listed</p>
+	<table class="striped centered">
+		<thead>
+			<tr>
+				<th>Utility</th>
+				<th>Day</th>
+				<th>Tab</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Truck</td>
+				<td>Thursdays</td>
+				<td>Evening</td>
+			</tr>
+			<tr>
+				<td>Electrician</td>
+				<td>Weekends</td>
+				<td>All Day</td>
+			</tr>
+			<tr>
+				<td>Babysitting</td>
+				<td>Weekday</td>
+				<td>Mornings</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="row buttons">
+	<p>
+		<a class="waves-effect waves-light btn-large" href="item.html"><i class="material-icons right">add</i>Create an Item</a>
+	</p>
+	<p>
+		<a class="waves-effect waves-light btn-large" href="service.html"><i class="material-icons right">build</i>Create a Service</a>
+	</p>
+	<p>
+		<a class="waves-effect orange btn-large" href="servicesOverview.html"><i class="material-icons right">format_list_numbered</i>Review Submissions</a>
+	</p>
+</div>
