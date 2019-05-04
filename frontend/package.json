@@ -1,0 +1,8 @@
+{
+  "name": "frontend",
+  "version": "0.0.1",
+  "description": "Frontend for Rocket Community Build 2019",
+  "main": "index.js",
+  "repository": "https://github.com/vikaspotluri123/rocket.build-2019",
+  "license": "MIT"
+}

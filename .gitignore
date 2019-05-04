@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+.yarn-integrity
+
+# From tests
+lib-cov
+coverage
+.nyc_output
+.eslintcache
+
+# dotenv environment variables file
+.env
+env.json
+
+# Code files
+
+.vscode/
+
+# Database
+
+content/*.db
+
+# @todo: remove
+bookshelf-test.js
+
+# @todo: env
+config.js
