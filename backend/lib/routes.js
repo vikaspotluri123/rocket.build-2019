@@ -2,7 +2,25 @@ const _multer = require('multer');
 const {requireLogin} = require('./middleware');
 const {product, service, user} = require('./controllers');
 
-const multer = _multer({dest: './user-data'});
+const storage = _multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(null, './user-data')
+	},
+	limits: {
+		files: 1,
+		fileSize: 1024 * 1024 * 5
+	},
+	filename: function (req, file, cb) {
+		const now = Date.now();
+		const ext = file.originalname.split('.')[file.originalname.split('.').length - 1]
+		cb(null, `${file.fieldname}-${now}.${ext}`);
+	},
+	onFileUploadStart: function (file) {
+		return (file.mimetype == 'image/jpg' || file.mimetype == 'image/jpeg' || file.mimetype == 'image/png');
+	}
+});
+
+const photo = _multer({storage}).single('photo');
 
 module.exports = function addRoutes(instance) {
 	instance.get('/', (req, res) => {
@@ -53,7 +71,7 @@ module.exports = function addRoutes(instance) {
 		res.send('want to create a product?');
 	});
 
-	instance.put('/products/new', multer.single('photo'),product.create);
+	instance.put('/products/new', photo, product.create);
 
 	instance.post('/products/:id', (req, res) => {
 		res.send('edit a products');
