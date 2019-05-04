@@ -21,7 +21,11 @@ module.exports = {
 			res.json(user);
 		}
 
-		res.end('logged in successfully');
+		req.session = {
+			user: user.id
+		};
+
+		res.redirect('/')
 	},
 
 	async create(req, res) {

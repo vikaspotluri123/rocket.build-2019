@@ -6,7 +6,16 @@ const {insert} = require('./base');
 const isSecurePassword = () => true;
 
 module.exports = {
-	login: async (email, ptPassword) => {
+	async find(id) {
+		const user = (await knex.select('*').from('users').where('id', id))[0];
+		if (user) {
+			delete user.password;
+			delete user.id;
+		}
+
+		return user;
+	},
+	async login (email, ptPassword) {
 		const user = (await knex.select('*').from('users').where('email', email))[0];
 		if (!user) {
 			return {

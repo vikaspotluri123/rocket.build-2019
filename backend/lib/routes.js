@@ -4,11 +4,12 @@ const {product, service, user} = require('./controllers');
 
 module.exports = function addRoutes(instance) {
 	instance.get('/', (req, res) => {
-		res.send('home page!');
-	});
-
-	instance.get('/signup', (req, res) => {
-		res.render('rocket');
+		if (req.user) {
+			console.log(req.user);
+			res.render('dashboard');
+		} else {
+			res.render('signup');
+		}
 	});
 
 	instance.post('/signup', user.create);
