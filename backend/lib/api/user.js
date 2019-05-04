@@ -72,8 +72,16 @@ module.exports = {
 
 		const password = await hash(ptPassword);
 
-		const user = await insert('users', {email, password, name, zip, phone});
+		const user = {email, password, name, zip, phone};
 
-		return user;
+		const [created] = await insert('users', user);
+
+		if (created) {
+			return user;
+		}
+
+		return {
+			errors: ['Something broke on our end, please try again later']
+		};
 	}
 }

@@ -8,10 +8,10 @@ module.exports = function addRoutes(instance) {
 	});
 
 	instance.get('/signup', (req, res) => {
-		res.send('signup');
+		res.render('rocket');
 	});
 
-	instance.put('/signup', user.create);
+	instance.post('/signup', user.create);
 
 	instance.get('/login', (req, res) => {
 		res.send('login');
