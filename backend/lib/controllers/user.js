@@ -19,13 +19,13 @@ module.exports = {
 
 		if (user.errors) {
 			res.json(user);
+			return;
 		}
 
-		req.session = {
-			user: user.id
-		};
-
-		res.redirect('/')
+		req.session.user = user.id;
+		req.session.save(() => {
+			res.redirect('/');
+		});
 	},
 
 	async create(req, res) {

@@ -5,7 +5,6 @@ const {product, service, user} = require('./controllers');
 module.exports = function addRoutes(instance) {
 	instance.get('/', (req, res) => {
 		if (req.user) {
-			console.log(req.user);
 			res.render('dashboard');
 		} else {
 			res.render('signin');
@@ -18,11 +17,17 @@ module.exports = function addRoutes(instance) {
 
 	instance.post('/signup', user.create);
 
-	instance.put('/login', user.login, (req, res) => {
+	instance.post('/login', user.login, (req, res) => {
 		res.send('are you allowed');
 	});
 
 	instance.use(requireLogin);
+
+	instance.get('/signout', (req, res) => {
+		req.session.destroy(() => {
+			res.redirect('/');
+		});
+	})
 
 	instance.get('/services-and-products', (req, res) => {
 		res.send('list services and products associated with you');
