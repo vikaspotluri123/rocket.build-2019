@@ -31,3 +31,5 @@ bookshelf-test.js
 
 # @todo: env
 config.js
+
+backend/db.db
