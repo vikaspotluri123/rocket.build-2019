@@ -24,7 +24,13 @@
 		main.center {
 			padding: 1rem;
 			margin: 0 auto;
-			min-width: 500px;
+			max-width: 100vw;
+		}
+
+		@media(min-width: 500px) {
+			main.center {
+				min-width: 500px;
+			}
 		}
 
 		#sign-up {
@@ -61,17 +67,6 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
-	if (window.innerWidth <= 500) {
-		document.querySelector('main').style['min-width'] = '0';
-		document.querySelector('main').style['max-width'] = '100vw';
-	}
-
-	window.addEventListener('resize', () => {
-		if (window.innerWidth <= 500) {
-			document.querySelector('main').style['min-width'] = '0';
-			document.querySelector('main').style['max-width'] = '100vw';
-		}
-	});
 
 	M.AutoInit();
 </script>
