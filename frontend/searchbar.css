@@ -1,0 +1,13 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  }
+  
