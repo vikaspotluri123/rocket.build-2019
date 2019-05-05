@@ -1,3 +1,4 @@
+const knex = require('../database/knex');
 const {insert} = require('./base');
 
 module.exports = {
@@ -23,5 +24,9 @@ module.exports = {
 		const service = {name, description, availability, createdAt: 1, user_id: userID};
 		await insert('services', service);
 		return service;
+	},
+
+	listMyServices(userID) {
+		return knex.select('*').from('services').where('user_id', userID);
 	}
 }

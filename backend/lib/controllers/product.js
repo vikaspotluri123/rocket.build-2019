@@ -39,7 +39,7 @@ module.exports = {
 		let photo = 'https://picsum.photos/id/524/200/200';
 		const {file} = req;
 		if (file) {
-			photo = file.destination;
+			photo = '/' + file.path.replace(/\\/g, '/');
 		}
 
 		const product = await api.product.create(name, photo, description, condition, req.user.id);

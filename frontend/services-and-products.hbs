@@ -1,0 +1,113 @@
+{{!< default}}
+{{!-- <p class="center">
+<a class="waves-effect waves-light btn-large" href="products.html"><i class="material-icons right">add</i>Products</a>
+<a class="waves-effect waves-light btn-large" href="servicesOverview.html"><i class="material-icons right">build</i>Services</a>
+</p><br> --}}
+<style>
+	img {
+		max-height: 500px;
+		width: auto;
+	}
+
+	.card-title {
+		background: rgba(0, 0, 0, 0.6);
+		width: 100%;
+		text-align: left;
+		margin: 0;
+	}
+</style>
+<ul class="collection">
+	{{#if products.length}}
+		<h2>Products</h2>
+		<div class="row">
+			{{#each products}}
+				<div class="col m6 s12">
+					<div class="card">
+						<div class="card-image">
+							<img
+								src="{{picture}}">
+							<p class="card-title orange-text text-darken-2">{{name}}</p>
+						</div>
+						<div class="card-content">
+							<p class="row"> This is a king size bed in fairly new condition (on your scale, it's probably a 4).</p><br />
+							<p>Condition: {{condition}}</p>
+						</div>
+						<div class="card-action">
+							<a href="#">Edit</a>
+							<a href="#">Delete</a>
+							<a href="#">Complete</a>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	{{/if}}
+	{{#if services.length}}
+		<h2>Services</h2>
+		<div class="row">
+			{{#each services}}
+			{{log this}}
+				<li class="collection-item avatar" style="text-align: left">
+					<span class="title"><strong>{{name}}</strong></span>
+					<p>{{description}}</p>
+					<p>Availability: {{availability}}</p>
+					<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+					<div class="card-action">
+						<a href="#">Edit</a>
+						<a href="#">Delete</a>
+						<a href="#">Complete</a>
+					</div>
+				</li>
+			{{/each}}
+		</div>
+	{{/if}}
+{{!-- 	<li class="collection-item avatar">
+		<span class="title">Deliver couch to CarePortal</span>
+		<p>Saturday, May 4th, 2019<br>
+			10:00 AM - 11:00 AM
+		</p>
+		<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+		<div class="card-action">
+			<a href="#">Edit</a>
+			<a href="#">Delete</a>
+			<a href="#">Complete</a>
+		</div>
+	</li>
+	<li class="collection-item avatar">
+		<span class="title">Help with electrical wiring</span>
+		<p>Monday, May 6th, 2019<br>
+			6:00 PM - 9:00 PM
+		</p>
+		<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+		<div class="card-action">
+			<a href="#">Edit</a>
+			<a href="#">Delete</a>
+			<a href="#">Complete</a>
+		</div>
+	</li>
+	<li class="collection-item avatar">
+		<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+		<span class="title">Assist with moving bed</span>
+		<p>Friday, June 17th, 2019<br>
+			11:00 AM - 1:00 PM
+		</p>
+		<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+		<div class="card-action">
+			<a href="#">Edit</a>
+			<a href="#">Delete</a>
+			<a href="#">Complete</a>
+		</div>
+	</li>
+	<li class="collection-item avatar">
+		<span class="title">Assist with anything Thelma needs</span>
+		<p>Friday,  July 27th, 2019<br>
+			3:00 PM - 6:00 PM
+		</p>
+		<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+		<div class="card-action">
+			<a href="#">Edit</a>
+			<a href="#">Delete</a>
+			<a href="#">Complete</a>
+		</div>
+	</li> --}}
+</ul>

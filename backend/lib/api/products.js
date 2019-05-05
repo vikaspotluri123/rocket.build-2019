@@ -1,3 +1,4 @@
+const knex = require('../database/knex');
 const {insert} = require('./base');
 
 function findProduct(productID) {
@@ -5,7 +6,7 @@ function findProduct(productID) {
 }
 
 function listMyProducts(userID) {
-	return knex().select('*').from('products').where('user', userID);
+	return knex.select('*').from('products').where('user_id', userID);
 }
 
 function editProduct(productID) {

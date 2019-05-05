@@ -1,5 +1,7 @@
 const crypto = require('crypto');
 const _multer = require('multer');
+const {static} = require('express');
+const api = require('./api');
 const {requireLogin} = require('./middleware');
 const {product, service, user} = require('./controllers');
 
@@ -36,6 +38,8 @@ module.exports = function addRoutes(instance) {
 		}
 	});
 
+	instance.use('/', static(process.cwd()));
+
 	instance.get('/signup', (req, res) => {
 		res.render('signup');
 	});
@@ -54,8 +58,22 @@ module.exports = function addRoutes(instance) {
 		});
 	})
 
-	instance.get('/services-and-products', (req, res) => {
-		res.send('list services and products associated with you');
+	instance.get('/services-and-products', async (req, res) => {
+		const conditions = ['Poor', 'Fair', 'Good', 'Great', 'Perfect'];
+		let [services, products] = await Promise.all([
+			api.service.listMyServices(req.user.id),
+			api.product.listMyProducts(req.user.id)
+		]);
+
+		products = products.map(product => {
+			product.condition = conditions[Number(product.condition) - 1];
+			return product;
+		});
+
+		res.render('services-and-products', {
+			services,
+			products
+		});
 	});
 
 	instance.get('/services/new', (req, res) => {
