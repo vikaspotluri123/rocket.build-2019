@@ -16,6 +16,9 @@
 	<style>
 		body {
 			min-height: 100vh;
+			background: whitesmoke;
+			display:flex;
+			flex-direction: column;
 		}
 
 		main.center {
@@ -31,7 +34,26 @@
 </head>
 
 <body class="valign-wrapper">
-	<header></header>
+	<nav class="orange darken-1" style="background:linear-gradient(10deg, rgb(211, 47, 99), #F87413)">
+		<div class="nav-wrapper">
+			<a href="#!" class="brand-logo">CarePortal</a>
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="/">Dashboard</a></li>
+				<li><a href="/services/new">New Service</a></li>
+				<li><a href="/products/new">New Product</a></li>
+				<li><a href="/profile">My Account</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="/">Dashboard</a></li>
+		<li><a href="/services/new">New Service</a></li>
+		<li><a href="/products/new">New Product</a></li>
+		<li><a href="#">Donate</a></li>
+		<li><a href="/profile">My Account</a></li>
+	</ul>
 	<main class="center row">
 		{{{body}}}
 	</main>
@@ -49,6 +71,8 @@
 			document.querySelector('main').style['min-width'] = '0';
 			document.querySelector('main').style['max-width'] = '100vw';
 		}
-	})
+	});
+
+	M.AutoInit();
 </script>
 </html>
