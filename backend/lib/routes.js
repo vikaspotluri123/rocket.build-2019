@@ -40,6 +40,10 @@ module.exports = function addRoutes(instance) {
 
 	instance.use('/', static(process.cwd()));
 
+	instance.get('/admin', (req, res) => {
+		res.render('adminpages/admin');
+	});
+
 	instance.get('/signup', (req, res) => {
 		res.render('signup');
 	});
