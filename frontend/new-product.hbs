@@ -1,6 +1,21 @@
 {{!< default}}
+<style>
+	.row.condition {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.radio_btn {
+    display: flex;
+}
+
+[type="radio"]:not(:checked)+span, [type="radio"]:checked+span {
+    padding-left: 25px;
+    margin-right: 10px;
+}
+</style>
 <div class="row">
-	<h1>Submit a product</h1>
+	<h2>Submit a product</h2>
 	<form class="col s12" method="POST" action="/products/new" enctype="multipart/form-data">
 		<div class="row">
 			<div class="input-field col s12">
@@ -14,43 +29,53 @@
 				<input id="description" name="description" type="text" placeholder="size, color, material, if applicable" class="validate">
 			</div>
 		</div>
-		<label>Condition:</label>
-		<p>
-			<label>
-				<input name="condition" id="poor" type="radio" value="1" />
-				<span>Poor</span>
-			</label>
-		</p>
-		<p>
-			<label>
-				<input name="condition" id="fair" type="radio" value="2" />
-				<span>Fair</span>
-			</label>
-		</p>
-		<p>
-			<label>
-				<input name="condition" id="good" type="radio" value="3" />
-				<span>Good</span>
-			</label>
-		</p>
-		<p>
-			<label>
-				<input name="condition" id="great" type="radio" value="4" />
-				<span>Great</span>
-			</label>
-		</p>
-		<p>
-			<label>
-				<input name="condition" id="perfect" type="radio" value="5" />
-				<span>Perfect</span>
-			</label>
-		</p>
+		<div class="row condition">
+			<label>Condition:</label>
+			<div class="radio_btn">
+				<p>
+					<label>
+						<input name="condition" id="poor" type="radio" value="1" />
+						<span>Poor</span>
+					</label>
+				</p>
+				<p>
+					<label>
+						<input name="condition" id="fair" type="radio" value="2" />
+						<span>Fair</span>
+					</label>
+				</p>
+				<p>
+					<label>
+						<input name="condition" id="good" type="radio" value="3" />
+						<span>Good</span>
+					</label>
+				</p>
+				<p>
+					<label>
+						<input name="condition" id="great" type="radio" value="4" />
+						<span>Great</span>
+					</label>
+				</p>
+				<p>
+					<label>
+						<input name="condition" id="perfect" type="radio" value="5" />
+						<span>Perfect</span>
+					</label>
+				</p>
+			</div>
+		</div>
+		<div class="row" style="padding-left:10px; text-align:left;">
 		<p>
 			<label>Upload Photo:</label>
-			<input type="file" name="photo" id="photo" accept="image/*">
+			<div class="row" style="padding-left:10px; text-align:left;">
+				<input type="file" name="photo" id="photo" accept="image/*">
+			</div>
 		</p>
+		</div>
+		<div class="row">
 		<p>
 			<button class="btn waves-effect waves-light" type="submit">Submit</button>
 		</p>
+		</div>
 	</form>
 </div>
