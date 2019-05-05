@@ -1,0 +1,86 @@
+{{!< ../default}}
+	<style>
+	.users {
+		display: flex;
+		flex-direction: column;
+	}
+	a{
+		color: orange;
+		font-size: 18px;
+	}
+	a:hover{
+		color: blue;
+		font-size: 22px;
+	}
+
+	h1{
+		color: orange;
+		text-align: center;
+	}
+	.users{
+		margin: 10px;
+		display: flex;
+	}
+	.pic img{
+		width: 60px;
+		height: 80px;
+		margin: 10px;
+	}
+	.pic img:hover{
+		width: 65px;
+		height: 100px;
+	}
+	.name a{
+		text-decoration: none;
+		color: orange;
+	}
+	.name a:hover{
+		color: blue;
+		font-size: 17px;
+	}
+	.name{
+		display: inline-block;
+		margin: 10px;
+	}
+	.name span{
+		font-size: 20px;
+	}
+	.delete {
+		display: flex;
+		align-items: center;
+		margin: 5px;
+		text-decoration: none;
+	}
+	.invite a:hover{
+		color: blue;
+		font-size: 17px;
+	}
+	.delete a:hover{
+		color: blue;
+		font-size: 17px;
+	}
+	.invite {
+		display: flex;
+		justify-content: space-between;
+	}
+</style>
+<h3>Services matching:</h3> 77840
+<div class="users">
+	<div class="pic">
+		<img src="/admin-images/people.jpg">
+	</div>
+	<div class="name center">
+		<a href="#"><span class="black-text">John Doe</span><br>Auto Mechanic<br>Zip Code: 77880<br>Availability: M,F 3-7PM</a></div>
+		<div class="invite"><a href="#"> Invite</a><a href="#">Delete</a></div>
+	</div><hr>
+	<div class="users">
+		<div class="pic">
+			<img src="/admin-images/people.jpg">
+		</div>
+		<div class="name center">
+			<a href="#"><span class="black-text">Jenny Smith</span><br>Electrician<br>Zip Code: 77880<br>Availability: T/Tr 3-7PM</a>
+		</div>
+		<div class="invite"><a href="#"> Invite</a><a href="#">Delete</a></div>
+	</div>
+</div>
+<hr>

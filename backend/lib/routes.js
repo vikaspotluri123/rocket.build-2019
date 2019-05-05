@@ -44,6 +44,10 @@ module.exports = function addRoutes(instance) {
 		res.render('adminpages/admin');
 	});
 
+	instance.get('/admin/users', (req, res) => {
+		res.render('adminpages/users');
+	});
+
 	instance.get('/profile', (req, res) => {
 		res.render('profile', {user: req.user});
 	});

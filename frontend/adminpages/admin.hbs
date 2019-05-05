@@ -2,20 +2,24 @@
 {{> admin-css}}
 <h1><span>Care</span>Portal</h1>
 <div class="search"><input id="search" placeholder="Search"></div>
-<div class="anchors" style="display:flex; justify-content:space-between; margin: 2rem">
-	<label>
-		<input name="group1" type="radio" />
-		<span>Products</span>
-	</label>
-	<label>
-		<input name="group1" type="radio" />
-		<span>Services</span>
-	</label>
-	<label>
-		<input name="group1" type="radio" />
-		<span>Members</span>
-	</label>
-</div>
+<form action="/admin/users">
+	<div class="anchors" style="display:flex; justify-content:space-between; margin: 2rem">
+		<label>
+			<input name="group1" type="radio" />
+			<span>Products</span>
+		</label>
+		<label>
+			<input name="group1" type="radio" />
+			<span>Services</span>
+		</label>
+		<label>
+			<input name="group1" type="radio" />
+			<span>Members</span>
+		</label>
+	</div>
+	<button type="submit" class="btn">Search</button>
+	<br /><br />
+</form>
 <div class="members">
 	<div class="stats">STATISTICS</div>
 	<div class="pics" style="margin: 0 auto; justify-content: space-around">
