@@ -48,6 +48,6 @@ module.exports = {
 			return res.json({errors: product.errors});
 		}
 
-		res.redirect(`/products/${product.id}`)
+		res.redirect('/');
 	}
 }

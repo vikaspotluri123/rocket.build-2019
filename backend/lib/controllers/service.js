@@ -17,6 +17,6 @@ module.exports = {
 			return res.json({errors: service.errors});
 		}
 
-		res.redirect(`/services/${service.id}`)
+		res.redirect('/')
 	}
 };
