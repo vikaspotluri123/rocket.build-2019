@@ -1,6 +1,9 @@
+const crypto = require('crypto');
 const _multer = require('multer');
 const {requireLogin} = require('./middleware');
 const {product, service, user} = require('./controllers');
+
+const hash = data => crypto.createHash('md5').update(data).digest('hex');
 
 const storage = _multer.diskStorage({
 	destination: function (req, file, cb) {
@@ -11,9 +14,11 @@ const storage = _multer.diskStorage({
 		fileSize: 1024 * 1024 * 5
 	},
 	filename: function (req, file, cb) {
-		const now = Date.now();
+		console.log(file);
+		const now = hash(Date.now().toString());
 		const ext = file.originalname.split('.')[file.originalname.split('.').length - 1]
-		cb(null, `${file.fieldname}-${now}.${ext}`);
+		const finalFileName = `${file.fieldname}-${now}.${ext}`;
+		cb(null, finalFileName);
 	},
 	onFileUploadStart: function (file) {
 		return (file.mimetype == 'image/jpg' || file.mimetype == 'image/jpeg' || file.mimetype == 'image/png');
@@ -68,12 +73,12 @@ module.exports = function addRoutes(instance) {
 	});
 
 	instance.get('/products/new', (req, res) => {
-		res.send('want to create a product?');
+		res.render('new-product');
 	});
 
-	instance.put('/products/new', photo, product.create);
+	instance.post('/products/new', photo, product.create);
 
-	instance.post('/products/:id', (req, res) => {
+	instance.put('/products/:id', (req, res) => {
 		res.send('edit a products');
 	});
 

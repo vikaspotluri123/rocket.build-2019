@@ -1,0 +1,56 @@
+{{!< default}}
+<div class="row">
+	<h1>Submit a product</h1>
+	<form class="col s12" method="POST" action="/products/new" enctype="multipart/form-data">
+		<div class="row">
+			<div class="input-field col s12">
+				<label for="name">Item:</label>
+				<input id="name" name="name" type="text" placeholder="e.g. mattress, couch, desk..." class="validate">
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<label for="description">Description:</label>
+				<input id="description" name="description" type="text" placeholder="size, color, material, if applicable" class="validate">
+			</div>
+		</div>
+		<label>Condition:</label>
+		<p>
+			<label>
+				<input name="condition" id="poor" type="radio" value="1" />
+				<span>Poor</span>
+			</label>
+		</p>
+		<p>
+			<label>
+				<input name="condition" id="fair" type="radio" value="2" />
+				<span>Fair</span>
+			</label>
+		</p>
+		<p>
+			<label>
+				<input name="condition" id="good" type="radio" value="3" />
+				<span>Good</span>
+			</label>
+		</p>
+		<p>
+			<label>
+				<input name="condition" id="great" type="radio" value="4" />
+				<span>Great</span>
+			</label>
+		</p>
+		<p>
+			<label>
+				<input name="condition" id="perfect" type="radio" value="5" />
+				<span>Perfect</span>
+			</label>
+		</p>
+		<p>
+			<label>Upload Photo:</label>
+			<input type="file" name="photo" id="photo" accept="image/*">
+		</p>
+		<p>
+			<button class="btn waves-effect waves-light" type="submit">Submit</button>
+		</p>
+	</form>
+</div>
