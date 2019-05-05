@@ -12,12 +12,11 @@
 		margin: 0;
 	}
 </style>
-<ul class="collection">
 	{{#if products.length}}
 		<h2>Products</h2>
 		<div class="row">
 			{{#each products}}
-				<div class="col m6 s12">
+				<div class="col m4 s12">
 					<div class="card">
 						<div class="card-image">
 							<img
@@ -40,21 +39,22 @@
 	{{/if}}
 	{{#if services.length}}
 		<h2>Services</h2>
-		<div class="row">
-			{{#each services}}
-			{{log this}}
-				<li class="collection-item avatar" style="text-align: left">
-					<span class="title"><strong>{{name}}</strong></span>
-					<p>{{description}}</p>
-					<p>Availability: {{availability}}</p>
-					<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					<div class="card-action">
-						<a href="#">Edit</a>
-						<a href="#">Delete</a>
-						<a href="#">Complete</a>
-					</div>
-				</li>
-			{{/each}}
-		</div>
+		<ul class="collection">
+			<div class="row">
+				{{#each services}}
+				{{log this}}
+					<li class="collection-item avatar" style="text-align: left">
+						<span class="title"><strong>{{name}}</strong></span>
+						<p>{{description}}</p>
+						<p>Availability: {{availability}}</p>
+						<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+						<div class="card-action">
+							<a href="#">Edit</a>
+							<a href="#">Delete</a>
+							<a href="#">Complete</a>
+						</div>
+					</li>
+				{{/each}}
+			</div>
+		</ul>
 	{{/if}}
-</ul>
