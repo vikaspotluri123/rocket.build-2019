@@ -21,3 +21,8 @@ npm install # Only run this once, this installs required dependencies to make th
 node index.js # This starts the server
 # Navigate to http://localhost:3000 to view the project
 ```
+
+Once installed and started, use: 
+
+- username: test@test.com
+- password: password
